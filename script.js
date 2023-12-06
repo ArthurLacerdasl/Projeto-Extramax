@@ -1,4 +1,4 @@
-(function() {
+(function () {
   "use strict";
   const select = (el, all = false) => {
     el = el.trim()
@@ -29,8 +29,17 @@
 
   heroCarouselItems.forEach((item, index) => {
     (index === 0) ?
-    heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>":
+      heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>" :
       heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
   });
-  
+
 })()
+
+
+document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady() {
+
+  console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+  document.getElementById('deviceready').classList.add('ready');
+}
